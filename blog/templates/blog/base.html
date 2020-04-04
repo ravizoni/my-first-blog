@@ -3,7 +3,10 @@
         <title>Django Girls blog</title>
     </head>
     <body>
-        <div><h1> Cabeçalho de teste do base.html: </h1></div>
+        <a href="{% url 'post_list' %}" class="top-menu">HOME</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu">Criar novo post</a>
+            {% endif %}
         {% block content %} {% endblock %}
     </body>
 </html>
